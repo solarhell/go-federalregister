@@ -1,4 +1,4 @@
-package api
+package federalregister
 
 import (
 	"github.com/imroc/req/v3"

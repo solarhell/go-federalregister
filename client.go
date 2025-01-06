@@ -9,13 +9,14 @@ type Client struct {
 	httpClient *req.Client
 }
 
-func NewClient() *Client {
+func NewClient(reqClient *req.Client) *Client {
 	timelocation.Setup()
 
-	httpClient := req.NewClient()
-	httpClient.SetCookieJar(nil)
-
-	httpClient.EnableDumpAll()
+	httpClient := reqClient
+	if httpClient == nil {
+		httpClient = req.NewClient()
+		httpClient.SetCookieJar(nil)
+	}
 
 	c := &Client{
 		httpClient: httpClient,

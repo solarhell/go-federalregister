@@ -5,7 +5,6 @@ import (
 	"github.com/bytedance/sonic"
 )
 
-// GetAllAgencies
 func (c *Client) GetAllAgencies(ctx context.Context) ([]APIAgencyItem, error) {
 	link := "https://www.federalregister.gov/api/v1/agencies"
 
